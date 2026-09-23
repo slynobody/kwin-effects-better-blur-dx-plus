@@ -9,7 +9,7 @@ forked from: https://github.com/xarblu/kwin-effects-better-blur-dx
 
 <img width="800" height="450" alt="ezgif-8369bac370314c2f" src="https://github.com/user-attachments/assets/029c58df-c542-42f6-b5e2-127a1f54c3ac" />
 
-# experimental: (v2.6.1b)
+# experimental: (v2.6.1c)
 
 new features 
 * border highlight
@@ -26,7 +26,7 @@ new features
 
 
 
-# install (debian, sid, Plasma 6.7.4, QT 6.10.2; precompiled) 
+# install (debian, sid, Plasma 6.7.4, QT 6.11.2; precompiled) 
 > wget https://github.com/slynobody/liquid-plasma_better_blur/releases/download/2.6/int_better_blur_liquid_2-6-6_7_4_amd64.deb
 > 
 > sudo apt install ./int_better_blur_liquid_2-6-6_7_4_amd64.deb
