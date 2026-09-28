@@ -14,7 +14,7 @@ forked from: https://github.com/xarblu/kwin-effects-better-blur-dx
 new features 
 * border highlight
 * mouse highlight
-* wobbly-windows-compatibility (though bundled [BetterWobblyWindows](https://github.com/GoldenBilly/BetterWobblyWindows))
+* wobbly-windows-compatibility (bundled [BetterWobblyWindows](https://github.com/GoldenBilly/BetterWobblyWindows))
 * better rounded corners
 * performace-tweaks
 
