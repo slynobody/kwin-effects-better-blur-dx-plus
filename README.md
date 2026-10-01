@@ -27,9 +27,9 @@ new features
 
 
 # install (debian, sid, Plasma 6.7.4, QT 6.11.2; precompiled) 
-> wget https://github.com/slynobody/liquid-plasma_better_blur/releases/download/2.6/int_better_blur_liquid_2-6-6_7_4_amd64.deb
+> wget https://github.com/slynobody/kwin-effects-better-blur-dx-plus/releases/download/2.6.1/int_better_blur_liquid_2-6_7_4_amd64.deb
 > 
-> sudo apt install ./int_better_blur_liquid_2-6-6_7_4_amd64.deb
+> sudo apt install ./int_better_blur_liquid_2-6_7_4_amd64.deb
 > 
 > wget https://raw.githubusercontent.com/slynobody/liquid-plasma_better_blur/refs/heads/main/defaults
 >
