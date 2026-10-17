@@ -965,7 +965,11 @@ bool BlurEffect::shouldBlur(const EffectWindow *w, int mask, const WindowPaintDa
     return true;
 }
 
+#if KWIN_VERSION < KWIN_VERSION_CODE(6, 7, 80)
 void BlurEffect::drawWindow(const RenderTarget &renderTarget, const RenderViewport &viewport, EffectWindow *w, int mask, const Region &deviceRegion, WindowPaintData &data)
+#else
+bool BlurEffect::drawWindow(const RenderTarget &renderTarget, const RenderViewport &viewport, EffectWindow *w, int mask, const Region &deviceRegion, WindowPaintData &data)
+#endif
 {
     clearBetterWobblyProviderResult(w);
     const QVariant request = w->data(BetterBlurDxApi::RequestRole);
@@ -983,8 +987,15 @@ void BlurEffect::drawWindow(const RenderTarget &renderTarget, const RenderViewpo
 
     // Draw the window over the blurred area. ProviderResult remains visible
     // only through this nested chain, where Better Wobbly can skip its fallback.
+#if KWIN_VERSION < KWIN_VERSION_CODE(6, 7, 80)
     effects->drawWindow(renderTarget, viewport, w, mask, deviceRegion, data);
     clearBetterWobblyProviderResult(w);
+#else
+    // KWin 6.8: pass on the result of the rest of the effect chain
+    const bool drawn = effects->drawWindow(renderTarget, viewport, w, mask, deviceRegion, data);
+    clearBetterWobblyProviderResult(w);
+    return drawn;
+#endif
 }
 
 GLTexture *BlurEffect::ensureNoiseTexture()
