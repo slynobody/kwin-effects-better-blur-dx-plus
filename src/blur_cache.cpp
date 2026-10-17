@@ -566,7 +566,7 @@ BBDX::WallpaperData* BBDX::BlurCache::getWallpaper() {
     WindowPaintData data{};
 
     GLFramebuffer::pushFramebuffer(wallpaper.framebuffer.get());
-    effects->drawWindow(wallpaperRenderTarget, wallpaperRenderViewport, desktop, KWin::Scene::PAINT_WINDOW_TRANSFORMED, KWin::Region::infinite(), data);
+    static_cast<void>(effects->drawWindow(wallpaperRenderTarget, wallpaperRenderViewport, desktop, KWin::Scene::PAINT_WINDOW_TRANSFORMED, KWin::Region::infinite(), data));
     GLFramebuffer::popFramebuffer();
 
     wallpaper.window = desktop->window();
